@@ -5,15 +5,24 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button {
   box-sizing: border-box;
 }
 
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #f5f5f5; /* Light text color for contrast */
-  background: #000; /* Black background */
+  color: #f5f5f5;
+  background: #000;
 }
 
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
 header {
-  background: #222; /* Darker black for header */
+  background: #222;
   color: #fff;
   text-align: center;
   padding: 3rem 1.5rem;
@@ -29,8 +38,9 @@ header p {
   font-size: 1.5rem;
 }
 
+/* Navigation */
 nav {
-  background: #333; /* Slightly lighter black for nav */
+  background: #333;
   color: #fff;
   padding: 1rem 1.5rem;
 }
@@ -54,28 +64,34 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #ddd; /* Light gray on hover */
+  color: #ddd;
+}
+
+/* Main Content Sections */
+main {
+  padding: 3rem 0;
 }
 
 section {
   padding: 3rem 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about, .services, .portfolio, .contact {
-  background: #222; /* Dark background for sections */
+  background: #222;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
-  color: #f5f5f5; /* Light text color for contrast */
+  color: #f5f5f5;
 }
 
-.about h2, .services h2, .portfolio h2, .contact h2 {
+section h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
 
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Services */
 .services .service-items {
   display: flex;
   flex-wrap: wrap;
@@ -90,8 +106,15 @@ section {
   flex: 1;
   min-width: 280px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.services .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Portfolio */
 .portfolio-items {
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +129,7 @@ section {
   flex: 1;
   min-width: 280px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .portfolio-item img {
@@ -116,16 +140,29 @@ section {
 .portfolio-item h3 {
   font-size: 1.75rem;
   margin: 1rem 0;
+  text-align: center;
 }
 
-.contact {
-  padding-bottom: 6rem; /* Adjusted padding to avoid footer overlap */
+.portfolio-item p {
+  padding: 0 1rem 1rem;
+  text-align: center;
 }
 
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
 input, textarea {
@@ -133,15 +170,19 @@ input, textarea {
   border: 1px solid #444;
   border-radius: 4px;
   font-size: 1rem;
-  background: #333; /* Darker background for input fields */
-  color: #f5f5f5; /* Light text color for input fields */
+  background: #333;
+  color: #f5f5f5;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #bbb;
 }
 
 button {
   padding: 1rem;
   border: none;
   border-radius: 4px;
-  background: #007bff; /* Blue background for button */
+  background: #007bff;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
@@ -149,15 +190,29 @@ button {
 }
 
 button:hover {
-  background: #0056b3; /* Darker blue on hover */
+  background: #0056b3;
 }
 
+/* Footer */
 footer {
   background: #222;
   color: #fff;
   text-align: center;
   padding: 1.5rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul li {
+      margin: 1rem 0;
+  }
+
+  .services .service-items, .portfolio-items {
+      flex-direction: column;
+  }
 }
